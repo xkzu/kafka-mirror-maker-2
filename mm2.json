@@ -1,0 +1,27 @@
+{
+  "name": "mm2",
+  "config": {
+    "connector.class": "org.apache.kafka.connect.mirror.MirrorSourceConnector",
+    "tasks.max": 1,
+
+    "source.cluster.alias": "origin",
+    "target.cluster.alias": "dest",
+
+    "source.cluster.bootstrap.servers": "kafka-origin:9092",
+    "target.cluster.bootstrap.servers": "kafka-dest:9093",
+
+    "topics": ".*",
+    "groups": ".*",
+
+    "refresh.topics.enabled": true,
+    "refresh.topics.interval.seconds": 5,
+
+    "emit.checkpoints.enabled": true,
+    "emit.heartbeats.enabled": true,
+    "sync.topic.acls.enabled": false,
+    "sync.topic.configs.enabled": true,
+
+    "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+    "value.converter": "org.apache.kafka.connect.storage.StringConverter"
+  }
+}

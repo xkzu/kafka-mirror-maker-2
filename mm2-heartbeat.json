@@ -1,0 +1,11 @@
+{
+  "name": "mm2-heartbeat",
+  "config": {
+    "connector.class": "org.apache.kafka.connect.mirror.MirrorHeartbeatConnector",
+    "source.cluster.alias": "origin",
+    "target.cluster.alias": "dest",
+    "source.cluster.bootstrap.servers": "kafka-origin:9092",
+    "target.cluster.bootstrap.servers": "kafka-dest:9093",
+    "tasks.max": "1"
+  }
+}
